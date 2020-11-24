@@ -19,43 +19,37 @@ class App extends Component {
 			this.setState({
 				logoCollapser: {
 					borderRadius: '100%',
-					marginLeft: '20px',
-					marginTop: '5px',
+					marginLeft: '10px',
+					marginTop: '30px',
 					width: '0',
 					height: '0',
 					color: 'transparent',
 				},
 			});
-		}, 1000);
+		}, 3000);
 		setTimeout((s) => {
 			this.setState({ loader: 0 });
-		}, 2000);
+		}, 4200);
 	}
 	mouseEntered = (event) => {
 		this.setState({ hovering: 1, background: event.target.id });
-	
 	};
 	mouseLeft = (event) => {
 		this.setState({ hovering: 0, background: null });
 	};
 
 	render() {
-	
-
 		let blueSlider = {};
 		let backGround = {
 			opacity: '0',
 			background: `url(${this.state.background})`,
-			
 		};
 		let headLine = {};
-		
 
 		let footer = {};
 		if (this.state.hovering) {
 			blueSlider = {
 				backgroundPosition: '100% 0',
-			
 			};
 			backGround = {
 				background: `url(${this.state.background})`,
@@ -69,17 +63,13 @@ class App extends Component {
 				width: '100%',
 			};
 
-			footer = { transform: 'translateY(-3.5vw)'};
-		
+			footer = { transform: 'translateY(-3.5vw)' };
 		}
 
 		let Screen = (
 			<div className='App'>
 				<div className='Loader' style={{ ...this.state.logoCollapser }}>
-					<Animated
-						animationIn='slideInUp'
-						isVisible={true}
-						animationInDuration='1000'>
+					<Animated animationIn='slideInUp' isVisible={true}>
 						<div>
 							<h3>Hey, this is Pranay and you are watching my portfolio!</h3>
 						</div>
@@ -116,7 +106,7 @@ class App extends Component {
 						{' '}
 						<TextHover
 							id={RubiksCube}
-							text='Cube'
+							text='Cubing'
 							MouseEntered={this.mouseEntered}
 							MouseLeft={this.mouseLeft}
 							hoverActive={this.state.hovering}
@@ -138,14 +128,15 @@ class App extends Component {
 						<footer>
 							<Animated
 								animationIn='slideInUp'
-								animationInDuration='100'
+								
 								isVisible={true}
-								animationOutDuration='100'
+							
+								
 								animationIn='slideInUp'>
 								<div className='Footer' style={footer}>
 									<p>Pranay Simejiya@BITS Pilani</p>
 								</div>
-								<div className='Footer2' style={footer} >
+								<div className='Footer2' style={footer}>
 									<p>f20190267@pilani.bits-pilani.ac.in</p>
 								</div>
 							</Animated>

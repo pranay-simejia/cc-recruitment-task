@@ -19,7 +19,7 @@
 	color: white;
 	border-radius: 0;
 	border: 2px solid red;
-	transition: all 1s ease-in-out;
+	transition: all 1.2s ease-in-out ;
 }
 
 .BlueSlider {
